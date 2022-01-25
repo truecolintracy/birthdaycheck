@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     minHeight: "100vh",
     display: "flex",
     alignItems: "center",
-    backgroundImage: "url(../images/jordan.jpg)",
+    backgroundImage: "url(images/jordan.jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
