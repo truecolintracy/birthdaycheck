@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     minHeight: "100vh",
     display: "flex",
     alignItems: "center",
-    backgroundImage: "url(images/jordan.jpg)",
+    backgroundImage: "url(/images/jordan.jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -55,20 +55,7 @@ const Layout = ({ children }) => {
           height: "100%",
         }}
       >
-        <main
-          className={classes.mainPrimary}
-          style={{
-            minHeight: "100vh",
-            display: "flex",
-            alignItems: "center",
-            backgroundImage: "url(../images/jordan.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          {children}
-        </main>
+        <main className={classes.mainPrimary}>{children}</main>
       </div>
     </>
   )
