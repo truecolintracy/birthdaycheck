@@ -60,7 +60,6 @@ const IndexPage = () => {
       setBanner(true)
     }
 
-    console.log(hoverCount)
     if (hoverCount > 15) {
       setStyle({
         display: "none",
