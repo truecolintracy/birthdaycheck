@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "gatsby";
-import { makeStyles } from "@material-ui/core/styles";
-import { Box, Typography, Button } from "@material-ui/core";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import React from "react"
+import { Link } from "gatsby"
+import { makeStyles } from "@material-ui/core/styles"
+import { Box, Typography, Button } from "@material-ui/core"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const useStyles = makeStyles({
   buttons: {
@@ -25,8 +25,8 @@ const useStyles = makeStyles({
     textDecoration: "none",
     textTransform: "uppercase",
     "&:hover": {
-      backgroundColor: "purple"
-    }
+      backgroundColor: "purple",
+    },
   },
   bigButtonText: {
     fontSize: 40,
@@ -35,26 +35,24 @@ const useStyles = makeStyles({
 
 const IndexPage = () => {
   const classes = useStyles()
-  const [ style, setStyle ] = React.useState({})
-  const [ hoverCount, setHoverCount ] = React.useState(0);
-  const [ banner, setBanner ] = React.useState(false);
-  const [ bigButton, setBigButton ] = React.useState(false);
-  const [ isBirthday, setIsBirthday ] = React.useState(false);
+  const [style, setStyle] = React.useState({})
+  const [hoverCount, setHoverCount] = React.useState(0)
+  const [banner, setBanner] = React.useState(false)
+  const [bigButton, setBigButton] = React.useState(false)
+  const [isBirthday, setIsBirthday] = React.useState(false)
 
   const toggleHover = () => {
-    const position = "absolute";
+    const position = "absolute"
     let top = Math.floor(Math.random() * window.innerHeight - 50) + "px"
     let left = Math.floor(Math.random() * window.innerWidth - 50) + "px"
 
-
-    setHoverCount(prevHoverCount => prevHoverCount + 1);
+    setHoverCount(prevHoverCount => prevHoverCount + 1)
 
     setStyle({
       top: top,
       left: left,
-      position: position
-    });
-    
+      position: position,
+    })
   }
 
   React.useEffect(() => {
@@ -71,7 +69,7 @@ const IndexPage = () => {
     }
 
     return
-  }, [hoverCount]);
+  }, [hoverCount])
 
   return (
     <Layout>
@@ -86,14 +84,14 @@ const IndexPage = () => {
       >
         <Box width="100%">
           <Typography component="h1" style={{ fontSize: "50px" }}>
-            🤪 {"\u2728"} Is it Quinn's birthday? {"\u2728"} 🤪
+            🤪 {"\u2728"} Is it Jordan's birthday? {"\u2728"} 🤪
           </Typography>
           {banner && (
             <Typography
               component="h2"
               style={{ fontSize: "44px", color: "purple" }}
             >
-              COME ON QUINN! GET IT!
+              COME ON! GET THE BUTTON!
             </Typography>
           )}
         </Box>
@@ -129,12 +127,12 @@ const IndexPage = () => {
             color="secondary"
             className={classes.buttons}
           >
-            No
+            Maybe?
           </Button>
         </Box>
       </Box>
-      {/* <Link to="/page-2/">Go to page 2</Link> */}
     </Layout>
-  )}
+  )
+}
 
-export default IndexPage;
+export default IndexPage
