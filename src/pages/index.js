@@ -39,7 +39,7 @@ const IndexPage = () => {
   const [hoverCount, setHoverCount] = React.useState(0)
   const [banner, setBanner] = React.useState(false)
   const [bigButton, setBigButton] = React.useState(false)
-  const [isBirthday, setIsBirthday] = React.useState(false)
+  const [isBirthday, setIsBirthday] = React.useState(true)
 
   const toggleHover = () => {
     const position = "absolute"
