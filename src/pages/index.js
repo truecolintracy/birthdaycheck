@@ -107,9 +107,13 @@ const IndexPage = () => {
                 Yes
               </Button>
               {bigButton && (
-                <Typography className={classes.bigButtonText}>
-                  Yes It is!!!
-                </Typography>
+                <Box
+                  className={classes.bigButton}
+                >
+                  <Typography className={classes.bigButtonText}>
+                    Yes It is!!!
+                  </Typography>
+                </Box>
               )}
             </Box>
           )}
