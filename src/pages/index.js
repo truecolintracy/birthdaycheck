@@ -107,16 +107,9 @@ const IndexPage = () => {
                 Yes
               </Button>
               {bigButton && (
-                <Link
-                  variant="contained"
-                  color="primary"
-                  className={classes.bigButton}
-                  to="/page-2/"
-                >
-                  <Typography className={classes.bigButtonText}>
-                    Yes It is!!!
-                  </Typography>
-                </Link>
+                <Typography className={classes.bigButtonText}>
+                  Yes It is!!!
+                </Typography>
               )}
             </Box>
           )}
