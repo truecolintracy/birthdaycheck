@@ -1,11 +1,18 @@
 import React from "react"
-import { Link } from "gatsby"
+import useWindowSize from "react-use-window-size";
+import Confetti from 'react-confetti';
 import { makeStyles } from "@material-ui/core/styles"
 import { Box, Typography, Button } from "@material-ui/core"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const useStyles = makeStyles({
+  confetti: {
+    position: "relative",
+    zIndex: 1000000,
+    top: 0,
+    left: 0,
+  },
   buttons: {
     transition: "all 0.1s ease-in-out",
     margin: 15,
@@ -14,6 +21,7 @@ const useStyles = makeStyles({
     width: "100%",
     height: "100%",
     position: "fixed",
+    zIndex: 10,
     backgroundColor: "pink",
     zIndex: 5,
     top: 0,
@@ -36,6 +44,7 @@ const useStyles = makeStyles({
 const IndexPage = () => {
   const classes = useStyles()
   const [style, setStyle] = React.useState({})
+  const { width, height } = useWindowSize()
   const [hoverCount, setHoverCount] = React.useState(0)
   const [banner, setBanner] = React.useState(false)
   const [bigButton, setBigButton] = React.useState(true)
@@ -73,6 +82,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+
       <Box
         width="100%"
         display="flex"
@@ -107,9 +117,13 @@ const IndexPage = () => {
                 Yes
               </Button>
               {bigButton && (
-                <Box
-                  className={classes.bigButton}
-                >
+                <Box className={classes.bigButton}>
+                  <Confetti
+                    width={width}
+                    height={height}
+                    numberOfPieces={1000}
+                    className={classes.confetti}
+                  />
                   <Typography className={classes.bigButtonText}>
                     Yes It is!!!
                   </Typography>
@@ -117,16 +131,15 @@ const IndexPage = () => {
               )}
             </Box>
           )}
-        {!isBirthday && (
+          {!isBirthday && (
             <Button
-            variant="contained"
-            color="secondary"
-            className={classes.buttons}
-          >
-            Maybe?
-          </Button>
-        )}
-          
+              variant="contained"
+              color="secondary"
+              className={classes.buttons}
+            >
+              Maybe?
+            </Button>
+          )}
         </Box>
       </Box>
     </Layout>
