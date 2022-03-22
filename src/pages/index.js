@@ -120,14 +120,16 @@ const IndexPage = () => {
               )}
             </Box>
           )}
-
-          <Button
+        {!isBirthday && (
+            <Button
             variant="contained"
             color="secondary"
             className={classes.buttons}
           >
             Maybe?
           </Button>
+        )}
+          
         </Box>
       </Box>
     </Layout>
